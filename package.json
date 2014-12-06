@@ -1,0 +1,27 @@
+{
+  "name": "calligraphy",
+  "version": "0.1.0",
+  "description": "demo",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/linwenjun/calligraphy.git"
+  },
+  "keywords": [
+    "calligraphy",
+    "workflow"
+  ],
+  "author": "linwenjun@163.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/linwenjun/calligraphy/issues"
+  },
+  "homepage": "https://github.com/linwenjun/calligraphy",
+  "dependencies": {
+    "backbone": "^1.1.2",
+    "jquery": "^2.1.1"
+  }
+}
