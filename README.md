@@ -20,4 +20,11 @@ emmet
 bower install jquery -S
 bower install backbone -S
 
+Sass vs. LESS vs. Stylus
+karma Testem
+jasmine
+go
+capistrano
+
+
 By Wenjun LIN

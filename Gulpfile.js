@@ -3,7 +3,7 @@ var browserify = require('gulp-browserify');
 var connect    = require('gulp-connect');
 
 gulp.task('script', function() {
-    gulp.src('./main.js')
+    gulp.src('./src/script/main.js')
         .pipe(browserify({
             insertGlobals: true,
             debug: false
@@ -29,6 +29,7 @@ gulp.task('html', function() {
 gulp.task('watch', function() {
     gulp.watch([
         './*.js',
+        './src/**/*.js',
         './*.html'
     ], ['script','html']);
 })
