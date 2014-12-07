@@ -8,4 +8,4 @@ function getGrade(score) {
 
 module.exports = {
     'getGrade': getGrade
-}
+};

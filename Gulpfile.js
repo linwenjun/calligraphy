@@ -2,6 +2,7 @@ var gulp       = require('gulp');
 var browserify = require('gulp-browserify');
 var connect    = require('gulp-connect');
 var sass       = require('gulp-sass');
+var jshint     = require('gulp-jshint');
 
 gulp.task('script', function() {
     gulp.src('./src/script/main.js')
@@ -40,5 +41,11 @@ gulp.task('watch', function() {
         './*.html'
     ], ['script', 'sass', 'html']);
 })
+
+gulp.task('lint', function() {
+  return gulp.src('./src/javascript/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
+});
 
 gulp.task('default', ['connect', 'watch'])

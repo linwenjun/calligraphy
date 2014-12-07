@@ -18,8 +18,8 @@ emmet
 
 
 Sass vs. LESS vs. Stylus
-jshint
-
+jshint jslint jscs 
+esformatter
 karma Testem
 jasmine
 go
