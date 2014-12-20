@@ -3,10 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>WDShare</title>
-    <script src="./build/main.js"></script>
+    
     <link rel="stylesheet" href="./build/main.css">
 </head>
 <body>
-    <h1>这里是WDShare的讲座__03</h1>
+    <div id="add">
+        今天
+    </div>
+    <ul id="todo">
+        <li class="list" data-id="1">
+            <div class="container">
+                <div class="block">
+                    <div class="time">3分钟1</div>
+                    <div class="title">干什么</div>
+                    <div class="content">怎么干</div>
+                    <div class="info">mac编辑于今天</div>
+                </div>
+                <div class="tail"></div>
+            </div>
+        </li>
+
+        <li class="list current" data-id="1">
+            <div class="container">
+                <div class="block">
+                    <input type="text" placeholder="标题" /><br />
+                    <textarea name="" id="" cols="50" rows="3"  placeholder="说点什么"></textarea>
+                </div>
+                <div class="tail"></div>
+            </div>
+        </li>
+
+        
+    </ul>
+
+    <script src="./build/main.js"></script>
 </body>
 </html>

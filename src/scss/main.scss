@@ -1,0 +1,116 @@
+@mixin vendor-prefix($name, $argument) {
+    -webkit-#{$name}: #{$argument};
+    -ms-#{$name}: #{$argument};
+    -moz-#{$name}: #{$argument};
+    -o-#{$name}: #{$argument};
+    #{$name}: #{$argument};
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+body {
+    background: url(../images/bg.jpg); 
+    background-size: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    font-family: 'Helvetica Neue',Helvetica,simsun,'宋体';
+}
+
+ul li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#add {
+    height: 80px;
+    width: 100px;
+    background: #E02D23;
+    text-align: center;
+    line-height: 2em;
+    font-size: 25px;
+    color: #FFF;
+    border-radius: 5px;
+    position: fixed;
+    left: 50%;
+    margin-left: -400px;
+    box-shadow: 3px 3px 4px #000;
+}
+
+#todo {
+    margin: 0 auto;
+    width: 500px;
+    position: relative;
+    .list {
+        width: 460px;
+        position: absolute;
+        @include vendor-prefix(perspective, 300px);
+        transition: all 0.5s;
+        transition-timing-function: ease-out;
+        .container {
+            @include vendor-prefix(perspective, 300px);
+            transform: rotateX(10deg);
+            transition: all 0.5s;
+            transition-timing-function: ease-out;
+            @include vendor-prefix(user-select, none);
+            .block {
+                height: 80px;
+                overflow: hidden;
+                background: #DDD;
+                padding: 10px;
+                cursor: pointer;
+                transition: all 0.5s;
+                transition-timing-function: ease-out;
+                box-shadow: 3px 3px 4px #000;
+                .time,
+                .title {
+                    display: inline-block;
+                    line-height: 1.5em;
+                    height: 1.5em;
+                }
+                .time {
+                    color: #4088C3;
+                }
+                .content {
+                    font-size: 18px;
+                    line-height: 1.8em;
+                    height: 1.8em;
+                }
+                .info {
+                    text-align: right;
+                }
+            }
+            .tail {
+                height: 30px;
+                background: #ccc;
+                transform-style: preserve-3d;
+                transform: rotateX(-50deg);
+                transform-origin: top;
+                transition: all 0.5s;
+                transition-timing-function: ease-out;
+                box-shadow: 3px 3px 4px #000;
+            }
+        }        
+        &.current {
+            top: 150px !important;
+            z-index: 100;
+            opacity: 0.9;
+            .container {
+                transform: rotateX(0deg) translateZ(50px);
+                .block {
+                    background: #FE9;
+                }
+                .tail {
+                    transform: rotateX(-83deg);
+                    background: #FE9;
+                }
+            }
+        }
+    }
+}

@@ -5,10 +5,10 @@ var sass       = require('gulp-sass');
 var jshint     = require('gulp-jshint');
 
 gulp.task('script', function() {
-    gulp.src('./src/script/main.js')
+    gulp.src('./src/javascript/main.js')
         .pipe(browserify({
             insertGlobals: true,
-            debug: false
+            debug: true
         }))
         .pipe(gulp.dest('./build/'))
 })
@@ -23,23 +23,23 @@ gulp.task('connect', function() {
 })
 
 //刷新
-gulp.task('html', function() {
+gulp.task('html', ['script', 'sass'], function() {
     gulp.src('./*.html')
         .pipe(connect.reload());
 })
 
 gulp.task('sass', function() {
-    gulp.src('./src/sass/*.sass')
+    gulp.src('./src/scss/*.scss')
         .pipe(sass())
         .pipe(gulp.dest('./build/'))
 })
 
 gulp.task('watch', function() {
     gulp.watch([
-        './src/javascript/.js',
-        './src/sass/main.sass',
+        './src/javascript/*.js',
+        './src/scss/main.scss',    
         './*.html'
-    ], ['script', 'sass', 'html']);
+    ], ['html']);
 })
 
 gulp.task('lint', function() {
