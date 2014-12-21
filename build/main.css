@@ -1,0 +1,96 @@
+body {
+  background: url(../images/bg.jpg);
+  background-size: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-family: 'Helvetica Neue', Helvetica, simsun, '宋体'; }
+
+ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+#add {
+  height: 80px;
+  width: 100px;
+  background: #E02D23;
+  text-align: center;
+  line-height: 2em;
+  font-size: 25px;
+  color: #FFF;
+  border-radius: 5px;
+  position: fixed;
+  left: 50%;
+  margin-left: -400px;
+  box-shadow: 3px 3px 4px #000; }
+
+#todo {
+  margin: 0 auto;
+  width: 500px;
+  position: relative; }
+  #todo .list {
+    width: 460px;
+    position: absolute;
+    -webkit-perspective: 300px;
+    -ms-perspective: 300px;
+    -moz-perspective: 300px;
+    -o-perspective: 300px;
+    perspective: 300px;
+    transition: all 0.5s;
+    transition-timing-function: ease-out; }
+    #todo .list .container {
+      -webkit-perspective: 300px;
+      -ms-perspective: 300px;
+      -moz-perspective: 300px;
+      -o-perspective: 300px;
+      perspective: 300px;
+      transform: rotateX(10deg);
+      transition: all 0.5s;
+      transition-timing-function: ease-out;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      -moz-user-select: none;
+      -o-user-select: none;
+      user-select: none; }
+      #todo .list .container .block {
+        height: 80px;
+        overflow: hidden;
+        background: #DDD;
+        padding: 10px;
+        cursor: pointer;
+        transition: all 0.5s;
+        transition-timing-function: ease-out;
+        box-shadow: 3px 3px 4px #000; }
+        #todo .list .container .block .time, #todo .list .container .block .title {
+          display: inline-block;
+          line-height: 1.5em;
+          height: 1.5em; }
+        #todo .list .container .block .time {
+          color: #4088C3; }
+        #todo .list .container .block .content {
+          font-size: 18px;
+          line-height: 1.8em;
+          height: 1.8em; }
+        #todo .list .container .block .info {
+          text-align: right; }
+      #todo .list .container .tail {
+        height: 30px;
+        background: #ccc;
+        transform-style: preserve-3d;
+        transform: rotateX(-50deg);
+        transform-origin: top;
+        transition: all 0.5s;
+        transition-timing-function: ease-out;
+        box-shadow: 3px 3px 4px #000; }
+    #todo .list.current {
+      top: 150px !important;
+      z-index: 100;
+      opacity: 0.9; }
+      #todo .list.current .container {
+        transform: rotateX(0deg) translateZ(50px); }
+        #todo .list.current .container .block {
+          background: #FE9; }
+        #todo .list.current .container .tail {
+          transform: rotateX(-83deg);
+          background: #FE9; }
