@@ -1,8 +1,8 @@
 src export-ignore
-Gemfile
-Gemfile.lock
-README.md
-spec
-features
-testem.json
-package.json
+Gemfile export-ignore
+Gemfile.lock export-ignore
+README.md export-ignore
+spec export-ignore
+features export-ignore
+testem.json export-ignore
+package.json export-ignore
