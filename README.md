@@ -1,6 +1,26 @@
 DEMO of WDShare
 
 install node & npm
+
+nvm
+https://github.com/creationix/nvm
+
+nvm list
+nvm install 0.10
+nvm use 0.10
+
+npm npm registry manager
+https://github.com/Pana/nrm
+npm install nrm -g
+nrm ls
+nrm use taobao
+nrm add
+nrm test
+nrm del
+
+开发，构建，测试，发布
+
+
 Node Version Manager (NVM)
 npm init
 npm install jquery backgone --save

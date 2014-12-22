@@ -1,3 +1,5 @@
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+
 @mixin vendor-prefix($name, $argument) {
     -webkit-#{$name}: #{$argument};
     -ms-#{$name}: #{$argument};
@@ -41,6 +43,19 @@ ul li {
     left: 50%;
     margin-left: -400px;
     box-shadow: 3px 3px 4px #000;
+    .info {
+        height: 35px;
+    }
+    .plus {
+        font-size: 40px;
+        font-weight: bold;
+        line-height: 38px;
+        transition: all 0.5s;
+        cursor: pointer;
+        &:hover {
+            color: #0F0;
+        }
+    }
 }
 
 #todo {
@@ -53,14 +68,14 @@ ul li {
         @include vendor-prefix(perspective, 300px);
         transition: all 0.5s;
         transition-timing-function: ease-out;
-        .container {
+        .todo-list-container {
             @include vendor-prefix(perspective, 300px);
             transform: rotateX(10deg);
             transition: all 0.5s;
             transition-timing-function: ease-out;
             @include vendor-prefix(user-select, none);
             .block {
-                height: 80px;
+                height: 100px;
                 overflow: hidden;
                 background: #DDD;
                 padding: 10px;
@@ -101,7 +116,7 @@ ul li {
             top: 150px !important;
             z-index: 100;
             opacity: 0.9;
-            .container {
+            .todo-list-container {
                 transform: rotateX(0deg) translateZ(50px);
                 .block {
                     background: #FE9;

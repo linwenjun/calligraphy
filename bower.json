@@ -1,0 +1,30 @@
+{
+  "name": "calligraphy",
+  "version": "0.1.0",
+  "homepage": "https://github.com/linwenjun/calligraphy",
+  "authors": [
+    "Wenjun LIN <linwenjun@163.com>"
+  ],
+  "description": "demo",
+  "main": "index.html",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "calligraphy"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "backbone": "~1.1.2",
+    "bootstrap-sass-official": "~3.3.1",
+    "fontawesome": "~4.2.0"
+  }
+}

@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <title>WDShare</title>
     
-    <link rel="stylesheet" href="./build/main.css">
+    <link rel="stylesheet" href="./build/css/main.css">
 </head>
 <body>
     <div id="add">
-        今天
+        <div class="info">
+            明天
+        </div>
+        <div class="plus glyphicon-plus"></div>
     </div>
     <ul id="todo">
         <li class="list" data-id="1">
-            <div class="container">
+            <div class="todo-list-container">
                 <div class="block">
                     <div class="time">3分钟1</div>
                     <div class="title">干什么</div>
-                    <div class="content">怎么干</div>
+                    <div class="content">今天我干了什么</div>
                     <div class="info">mac编辑于今天</div>
                 </div>
                 <div class="tail"></div>
@@ -24,7 +27,7 @@
         </li>
 
         <li class="list current" data-id="1">
-            <div class="container">
+            <div class="todo-list-container">
                 <div class="block">
                     <input type="text" placeholder="标题" /><br />
                     <textarea name="" id="" cols="50" rows="3"  placeholder="说点什么"></textarea>

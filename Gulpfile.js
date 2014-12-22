@@ -4,6 +4,12 @@ var connect    = require('gulp-connect');
 var sass       = require('gulp-sass');
 var jshint     = require('gulp-jshint');
 
+
+var config = {
+    sassPath: './resource/sass',
+    bowerDir: './bower_components'
+}
+
 gulp.task('script', function() {
     gulp.src('./src/javascript/main.js')
         .pipe(browserify({
@@ -11,6 +17,11 @@ gulp.task('script', function() {
             debug: true
         }))
         .pipe(gulp.dest('./build/'))
+})
+
+gulp.task('icons', function() {
+    return gulp.src(config.bowerDir + '/bootstrap-sass-official/assets/fonts/bootstrap/**.*')
+            .pipe(gulp.dest('./build/fonts'))
 })
 
 
@@ -31,7 +42,7 @@ gulp.task('html', ['script', 'sass'], function() {
 gulp.task('sass', function() {
     gulp.src('./src/scss/*.scss')
         .pipe(sass())
-        .pipe(gulp.dest('./build/'))
+        .pipe(gulp.dest('./build/css/'))
 })
 
 gulp.task('watch', function() {
