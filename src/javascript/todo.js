@@ -1,13 +1,18 @@
 var $        = require("jquery");
 var Backbone = require("backbone");
+var _        = require('underscore');
 var util     = require('./util.js');
 
 Backbone.$ = $;
+
+var LIST_HEIGHT = 111;
 
 var TodoView = Backbone.View.extend({
     tagName: 'li',
 
     className: 'list',
+
+    template: _.template($('#todo_template').html()),
 
     appended: false,
 
@@ -17,22 +22,24 @@ var TodoView = Backbone.View.extend({
     },
 
     onStatusChange: function(newVal) {
-        this.$el.html(newVal);
+        this.$el.html(this.template(this.model.attributes))
+        $('#todo').prepend(this.$el);
 
-        if(!this.appended) {
-            console.log(this.$el);
-            $('body').append(this.$el);
-            this.appended = true;
-        }
+        $('.list').not('.add-form').each(function(k, v) {
+            var index = $(this).index();
+            $(this).css('top', index * LIST_HEIGHT);
+        })
     }
 })
 
 var Todo = Backbone.Model.extend({
     defaults: {
-        'status': 'view'
+        'grade': ''
     },
 
     initialize: function() {
+        var grade = util.getGrade(this.get('score'));
+        this.set('grade', grade);
         new TodoView({model: this});
     }
 })

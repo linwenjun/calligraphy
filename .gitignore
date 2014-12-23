@@ -4,3 +4,4 @@ node_modules/
 Capfile
 config/
 .capistrano/
+.sass-cache/

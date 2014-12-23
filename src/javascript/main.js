@@ -1,19 +1,46 @@
-var $        = require('jquery');
-var Todo     = require('./todo.js');
+var $    = require('jquery');
+var Todo = require('./todo.js')
 
-theTodo = new Todo();
-var currentId;
-var $todo = $('#todo');
+console.log(Todo);
+
 var LIST_HEIGHT = 111;
+var normal_status = true;
 
 
-$('.list').each(function(k, v) {
+$('.list').not('.add-form').each(function(k, v) {
     var index = $(this).index();
     $(this).css('top', index * LIST_HEIGHT);
 }).on('click', function() {
-    $(this).toggleClass('current');
+    if(normal_status) {
+        $(this).toggleClass('current');
+    }
+    
 })
 
 $('#add').on('click', function() {
-    alert("abcd");
+    normal_status = false;
+    $('.add-form').show();
 })
+
+$('#add-submit').on('click', function() {
+    normal_status = true;
+    $('.add-form').hide();
+    var score = $('#demo_score').val();
+    var name = $('#demo_name').val();
+
+    addItem(name, score)
+})
+
+function addItem(name, score) {
+    var score = parseInt(score, 10) || 0;
+
+    if(score > 100) {
+        alert('你有病吧！');
+        return;
+    }
+
+    new Todo({
+        name: name,
+        score: score
+    });
+}

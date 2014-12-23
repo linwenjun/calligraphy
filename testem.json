@@ -2,9 +2,9 @@
     "framework": "jasmine",
     "serve_files": "browserified.js",
     "src_files": [
-        "./src/javascript/*.js",
-        "./spec/*_spec.js"
+        "./src/javascript/util.js",
+        "./spec/util_spec.js"
     ],
-    "before_tests": "browserify ./spec/todo_spec.js -o browserified.js",
+    "before_tests": "browserify ./spec/util_spec.js -o browserified.js",
     "on_exit": "rm browserified.js"
 }

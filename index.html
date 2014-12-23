@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>WDShare</title>
     
-    <link rel="stylesheet" href="./build/css/main.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <div id="add">
@@ -17,28 +17,50 @@
         <li class="list" data-id="1">
             <div class="todo-list-container">
                 <div class="block">
-                    <div class="time">3分钟1</div>
+                    <div class="time">10分钟</div>
                     <div class="title">干什么</div>
                     <div class="content">今天我干了什么</div>
-                    <div class="info">mac编辑于今天</div>
+                    <div class="info">windows编辑于今天</div>
                 </div>
                 <div class="tail"></div>
             </div>
         </li>
 
-        <li class="list current" data-id="1">
+        <li class="list add-form current">
             <div class="todo-list-container">
-                <div class="block">
-                    <input type="text" placeholder="标题" /><br />
-                    <textarea name="" id="" cols="50" rows="3"  placeholder="说点什么"></textarea>
-                </div>
-                <div class="tail"></div>
+                <form class="form-inline">
+                    <input type="text" id="demo_name" class="input-small" placeholder="Name">
+                    <input type="text" id="demo_score" class="input-small" placeholder="Score">
+                    <button type="submit" id="add-submit"  class="btn">Add</button>
+                </form>
+            </div>
+            <div class="tail"></div>
             </div>
         </li>
 
         
     </ul>
 
-    <script src="./build/main.js"></script>
+    <script type="text/backbone_template" id="todo_template">
+
+            <div class="todo-list-container">
+                <div class="block">
+                    <div class="time">30分钟</div>
+                    <div class="title">干什么</div>
+                    <div class="content">
+                        <%= name%>
+                        得了
+                        <%= score%>
+                        等级为
+                        <%= grade%>
+                    </div>
+                    <div class="info">mac编辑于今天</div>
+                </div>
+                <div class="tail"></div>
+            </div>
+        
+    </script>
+
+    <script src="./javascript/main.js"></script>
 </body>
 </html>

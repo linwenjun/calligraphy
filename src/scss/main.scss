@@ -38,7 +38,7 @@ ul li {
     line-height: 2em;
     font-size: 25px;
     color: #FFF;
-    border-radius: 5px;
+    @include border-radius(10px);
     position: fixed;
     left: 50%;
     margin-left: -400px;
@@ -62,6 +62,9 @@ ul li {
     margin: 0 auto;
     width: 500px;
     position: relative;
+    .add-form {
+        display: none;
+    }
     .list {
         width: 460px;
         position: absolute;
