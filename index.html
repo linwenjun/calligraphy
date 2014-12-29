@@ -19,7 +19,7 @@
                 <div class="block">
                     <div class="time">10分钟</div>
                     <div class="title">干什么</div>
-                    <div class="content">今天我干了什么</div>
+                    <div class="content">今天</div>
                     <div class="info">windows编辑于今天</div>
                 </div>
                 <div class="tail"></div>
@@ -28,17 +28,18 @@
 
         <li class="list add-form current">
             <div class="todo-list-container">
-                <form class="form-inline">
-                    <input type="text" id="demo_name" class="input-small" placeholder="Name">
-                    <input type="text" id="demo_score" class="input-small" placeholder="Score">
-                    <button type="submit" id="add-submit"  class="btn">Add</button>
-                </form>
+                <div class="block">
+                    <form class="form-inline">
+                        <input type="text" id="demo_name" class="input-small" placeholder="Name">
+                        <input type="text" id="demo_score" class="input-small" placeholder="Score">
+                        <button type="button" id="add-submit"  class="btn">Add</button>
+                    </form>
+                </div>
+                <div class="tail"></div>
             </div>
-            <div class="tail"></div>
             </div>
         </li>
-
-        
+    
     </ul>
 
     <script type="text/backbone_template" id="todo_template">

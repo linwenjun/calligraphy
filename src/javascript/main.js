@@ -1,5 +1,5 @@
 var $    = require('jquery');
-var Todo = require('./todo.js')
+var Todo = require('./todo.js');
 
 console.log(Todo);
 
@@ -13,9 +13,8 @@ $('.list').not('.add-form').each(function(k, v) {
 }).on('click', function() {
     if(normal_status) {
         $(this).toggleClass('current');
-    }
-    
-})
+    } 
+});
 
 $('#add').on('click', function() {
     normal_status = false;

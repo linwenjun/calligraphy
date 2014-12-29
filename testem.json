@@ -5,6 +5,7 @@
         "./src/javascript/util.js",
         "./spec/util_spec.js"
     ],
+    "launch_in_dev": ["phantomjs"],
     "before_tests": "browserify ./spec/util_spec.js -o browserified.js",
     "on_exit": "rm browserified.js"
 }
